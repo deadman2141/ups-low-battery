@@ -23,6 +23,8 @@
 
 -Make sure ssh keys are appropriately placed. Currently will not work with password authentication for remote hosts.
 
+-Edit ups_low_battery.conf for your UPS name. The value should be what you set during the NUT Setup. You can check to see if your UPS is visiable by `upsc -l`
+
 ## Install Script
 -Places files to correct locations for systemd (On a Raspberry PI OS)
 
