@@ -1,0 +1,12 @@
+# /etc/ups-low-battery/ups_low_battery_targets
+# One target per line:  <ssh-host> <command to run there>
+# ssh-host may be user@host, and you can pin ports via -p using ssh config
+# aliases in ~/.ssh/config instead of inline flags.
+#
+# Examples (graceful shutdowns - fired one at a time, in order, with
+# STAGGER_DELAY seconds between each host so it can start shutting down):
+host1@192.168.1.145 systemctl poweroff
+
+#
+# Non-shutdown examples:
+web@192.168.1.30 sudo systemctl stop nginx && echo "web drained"

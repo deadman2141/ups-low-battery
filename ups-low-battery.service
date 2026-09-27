@@ -1,0 +1,15 @@
+# /etc/systemd/system/ups-low-battery.service
+[Unit]
+Description=UPS low battery watchdog (NUT) - SSH-fires remote shutdowns
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/ups_low_battery.sh
+Restart=always
+RestartSec=10
+User=root
+
+[Install]
+WantedBy=multi-user.target
